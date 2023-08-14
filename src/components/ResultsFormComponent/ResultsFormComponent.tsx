@@ -24,7 +24,7 @@ import {
   CheckBox,
   Table,
   Modal,
-} from '../';
+} from '../..';
 import { MedicalExaminationService } from '@ohif/core';
 import { IExaminationResults } from 'platform/core/src/services/MedicalExaminationService/examinationResults';
 import { event } from '@kitware/vtk.js/macros';
