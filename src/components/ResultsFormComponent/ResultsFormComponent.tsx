@@ -5,7 +5,7 @@ import React, {
   createRef,
   useRef,
   ChangeEvent,
-  FormEvent,
+	FormEvent,
 } from 'react';
 
 import './styles.css';
@@ -25,11 +25,14 @@ import {
   Table,
   Modal,
 } from '../..';
-import { MedicalExaminationService } from '@ohif/core';
-import { IExaminationResults } from 'platform/core/src/services/MedicalExaminationService/examinationResults';
+
+import { IExaminationResults } from '@services/MedicalExamination/examinationResults';
+import useLocalStorage  from '@services/LocalStorage';
+import MedicalExaminationService from '@services/MedicalExamination';
 import { event } from '@kitware/vtk.js/macros';
 import { array, func } from 'prop-types';
 import { useModal } from '../../contextProviders';
+
 //import insertUser from 'platform/ui/src/components/ResultsFormComponent/testapp.js';
 
 const TYPE_OF_NODULE = [
@@ -325,26 +328,6 @@ const sendData = async (url, data) => {
     throw new Error(`Ошибка по адресу ${URL}, статус ошибки ${response}`);
   }
   return await response.json();
-};
-//Функция хранения введенных данных в localStorage
-function getStorageValue(key, defaultValue) {
-  // getting stored value
-  const saved = localStorage.getItem(key);
-  const initial = JSON.parse(saved);
-  return initial || defaultValue;
-}
-
-export const useLocalStorage = (key, defaultValue) => {
-  const [value, setValue] = useState(() => {
-    return getStorageValue(key, defaultValue);
-  });
-
-  useEffect(() => {
-    // storing input name
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-
-  return [value, setValue];
 };
 const ResultsFromComponent: React.FC<IExaminationResults> = ({
   additional_inf,
