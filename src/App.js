@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultsFormComponent } from './components/ResultsFormComponent';
+import { ResultsFormComponent } from '@components/ResultsFormComponent';
 
 function App() {
   return (

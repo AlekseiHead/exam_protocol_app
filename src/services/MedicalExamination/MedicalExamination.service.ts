@@ -1,7 +1,7 @@
 import { CommandsManager } from '../../classes';
 import { ExtensionManager } from '../../extensions';
 import { PubSubService } from '../_shared/pubSubServiceInterface';
-import { IExaminationResults } from './examinationResults';
+import IExaminationResults from '@services/MedicalExamination';
 
 const EVENTS = {};
 

@@ -1,5 +1,19 @@
 {
   "compilerOptions": {
+		"target": "es2017",
+    "module": "commonjs",
+    "baseUrl": "./",
+    "checkJs": true,
+    // Ensure that Babel can safely transpile files in the TypeScript project
+    "isolatedModules": true,
+    "emitDeclarationOnly": true,
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"],
 			"@assets/*": ["./assets/*"],

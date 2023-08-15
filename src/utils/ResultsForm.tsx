@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Enums,
-  getEnabledElement,
-  getOrCreateCanvas,
-  StackViewport,
-  VolumeViewport,
-} from '@cornerstonejs/core';
-import { ToolGroupManager } from '@cornerstonejs/tools';
+
 import PropTypes from 'prop-types';
-import { ResultsFromComponent } from '@ohif/ui';
+import ResultsFromComponent from '@components/ResultsFormComponent';
 
-import { getEnabledElement as OHIFgetEnabledElement } from '../state';
-import { IExaminationResults } from 'platform/core/src/services/MedicalExaminationService/examinationResults';
-import MedicalExaminationService from 'platform/core/src/services/MedicalExaminationService';
-
-const MINIMUM_SIZE = 100;
-const DEFAULT_SIZE = 512;
-const MAX_TEXTURE_SIZE = 10000;
-const VIEWPORT_ID = 'cornerstone-viewport-download-form';
+import IExaminationResults from '@services/MedicalExamination';
+import MedicalExaminationService from '@services/MedicalExamination';
 
 //const medicalExaminationService = new MedicalExaminationService();
 

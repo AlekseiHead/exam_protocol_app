@@ -10,8 +10,6 @@ import React, {
 
 import './styles.css';
 
-//import { useTranslation } from 'react-i18next';
-
 import {
   Typography,
   Input,
@@ -29,11 +27,9 @@ import {
 import { IExaminationResults } from '@services/MedicalExamination/examinationResults';
 import useLocalStorage  from '@services/LocalStorage';
 import MedicalExaminationService from '@services/MedicalExamination';
-import { event } from '@kitware/vtk.js/macros';
+
 import { array, func } from 'prop-types';
 import { useModal } from '../../contextProviders';
-
-//import insertUser from 'platform/ui/src/components/ResultsFormComponent/testapp.js';
 
 const TYPE_OF_NODULE = [
   {
